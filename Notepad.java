@@ -240,6 +240,7 @@ class Notepad extends WindowAdapter implements ActionListener,TextListener,KeyLi
            {
              if(open()){
              saved=1;
+             kp=0;
              }flag1=0;
              
            }
@@ -250,13 +251,14 @@ class Notepad extends WindowAdapter implements ActionListener,TextListener,KeyLi
             ta.setText("");
             flag2=0;
             saved=0;
+            kp=0;
            }
            else if(flag3==1)
-           {
+           { kp=0;
              System.exit(0);
              
            }
-           kp=0;
+           
           
        }
 
