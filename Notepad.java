@@ -3,7 +3,7 @@ import java.io.*;
 import java.awt.event.*;
 import java.util.regex.*;
 
-class Notepad extends WindowAdapter implements ActionListener,KeyListener{
+class Notepad extends WindowAdapter implements ActionListener,TextListener,KeyListener{
      Frame f;
      TextArea ta;
      TextField tf,rf,rr;
@@ -55,7 +55,7 @@ class Notepad extends WindowAdapter implements ActionListener,KeyListener{
              mi5.addActionListener(this);
              mi6.addActionListener(this);
              mi7.addActionListener(this);
-             d = new dlg(f , "ERROR",true);
+             d = new Dialog(f , "ERROR",true);
                  
              d.add( new Label ("Not Found."));  
                 
@@ -169,7 +169,7 @@ class Notepad extends WindowAdapter implements ActionListener,KeyListener{
         }    
         ta.setText(st);
         fis.close(); 
-        retn true;
+        return true;
         }
         catch(Exception et)
         {
@@ -557,7 +557,7 @@ class Notepad extends WindowAdapter implements ActionListener,KeyListener{
           }
       }
       public void textValueChanged(TextEvent te)
-      {       if(te.getSource()==t)
+      {       if(te.getSource()==ta)
               {
                   
               }
@@ -589,7 +589,12 @@ class Notepad extends WindowAdapter implements ActionListener,KeyListener{
  public void keyTyped(KeyEvent e) {
     kp=1;
   }
-      
+  public void keyReleased(KeyEvent e) {
+    kp=1;
+  }
+  public void keyPressed(KeyEvent e) {
+    kp=1;
+  }   
       public static void main(String args[])
       {
           new Notepad();
